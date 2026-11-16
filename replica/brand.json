@@ -1,0 +1,6 @@
+{
+  "name": "myanime",
+  "avoid": ["Wibuku", "Wibuku Developer", "Wibuku Premium", "Wibuku Store", "Wibu Fishing"],
+  "domains": ["wibuku.app", "wibuku.com", "wibukustore.my.id", "wibuku.my"],
+  "colors": ["#fee831", "#f6c42b", "#f0e030", "#f0c020", "#e0a020"]
+}
