@@ -279,6 +279,22 @@ describe('mapDetail', () => {
     ]);
   });
 
+  it('upgrades http official episode links to https and still drops other schemes', () => {
+    const detail = mapDetail({
+      ...raw,
+      streamingEpisodes: [
+        { title: 'Episode 1', url: 'http://www.crunchyroll.com/watch/G8WUNGWKG/one', site: 'Crunchyroll' },
+        { title: 'Episode 2', url: 'HTTP://www.crunchyroll.com/watch/2', site: 'Crunchyroll' },
+        { title: 'Episode 3', url: 'ftp://www.crunchyroll.com/watch/3', site: 'Crunchyroll' },
+        { title: 'Episode 4', url: 'javascript:alert(1)//http://x', site: 'Crunchyroll' },
+      ],
+    })!;
+    expect(detail.officialEpisodes.map((e) => e.url)).toEqual([
+      'https://www.crunchyroll.com/watch/G8WUNGWKG/one',
+      'https://www.crunchyroll.com/watch/2',
+    ]);
+  });
+
   it('sorts upcoming episodes and filters relations and recommendations', () => {
     const detail = mapDetail(raw)!;
     expect(detail.upcoming).toEqual([
