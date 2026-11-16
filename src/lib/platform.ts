@@ -63,3 +63,29 @@ export async function shareLink(data: { title: string; text?: string; url: strin
   }
   return (await copyText(data.url)) ? 'copied' : 'failed';
 }
+
+/**
+ * Shares plain text (a backup) through the system share sheet; copies it when there is no sheet.
+ * 'cancelled' = the user closed the sheet, nothing to report.
+ */
+export async function shareText(data: { title: string; text: string }): Promise<'shared' | 'copied' | 'cancelled' | 'failed'> {
+  const cancelled = (error: unknown) =>
+    error instanceof Error && (error.name === 'AbortError' || /cancel/i.test(error.message));
+  if (isNative()) {
+    try {
+      const { Share } = await import('@capacitor/share');
+      await Share.share({ title: data.title, text: data.text, dialogTitle: data.title });
+      return 'shared';
+    } catch (error) {
+      if (cancelled(error)) return 'cancelled';
+    }
+  } else if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
+    try {
+      await navigator.share(data);
+      return 'shared';
+    } catch (error) {
+      if (cancelled(error)) return 'cancelled';
+    }
+  }
+  return (await copyText(data.text)) ? 'copied' : 'failed';
+}
