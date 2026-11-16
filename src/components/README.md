@@ -422,7 +422,8 @@ function useAlertsSync(): void                               // shell only
 - `lib/anilist/queries.ts`: `resolveSort(params)`, `searchVariables(params, page)`.
 - `lib/anilist/client.ts`: `isAbortError(error)`, `ANILIST_URL`.
 - `lib/query.ts`: `QueryProvider`, `shouldRetry`, `retryDelay`.
-- `lib/platform.ts`: `currentHashPath()`.
+- `lib/platform.ts`: `currentHashPath()`, `shareText({ title, text })` -> `'shared' | 'copied' | 'cancelled' | 'failed'`
+  (system share sheet for plain text such as a backup; copies when there is no sheet).
 - `store/library.ts`: `toSnapshot(anime)`, `useEntry(mediaId)`, `nextUnwatched(entry)`, `subscribedIds(entries)`,
   `historyKey(mediaId, episode)`, `emptyLibrary()`, `DEFAULT_SETTINGS`, `STORAGE_KEY`, `HISTORY_LIMIT`.
   Every action accepts a full `Anime` where a `Snapshot` is expected and stores only the snapshot fields.
