@@ -11,6 +11,11 @@ const config: CapacitorConfig = {
     allowMixedContent: false,
   },
   plugins: {
+    // Dark interface: ask for light status bar icons. Insets arrive through env(safe-area-inset-*).
+    SystemBars: {
+      insetsHandling: 'css',
+      style: 'DARK',
+    },
     LocalNotifications: {
       smallIcon: 'ic_stat_episode',
       iconColor: '#3ddc97',
