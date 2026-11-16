@@ -1,0 +1,32 @@
+/* C05 Pemutar resmi. Tokens only. Nothing here is drawn over the player. */
+
+.watch-main,
+.watch-tracker {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  /* Keeps the 16:9 frame inside a laptop-height window. */
+  max-width: calc(var(--layout-content-max) * 0.75);
+  min-width: 0;
+}
+
+.watch-tracker {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.watch-tracker__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-3);
+}
+
+.watch-tracker__select {
+  flex: 1 1 calc(var(--layout-side-nav) - var(--space-5));
+  min-width: 0;
+  max-width: calc(var(--layout-side-nav) + var(--space-8));
+}
