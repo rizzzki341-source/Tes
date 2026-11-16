@@ -1,0 +1,41 @@
+/* C02 Jadwal tayang */
+
+.schedule {
+  min-width: 0;
+  gap: 0;
+}
+
+.schedule-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.schedule-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+}
+
+.schedule-head__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.schedule-filter {
+  flex: none;
+  gap: var(--space-3);
+}
+
+.schedule-filter .switch__label {
+  font-size: var(--type-sm-size);
+  line-height: var(--type-sm-line);
+}
+
+.schedule-zone {
+  padding-top: var(--space-2);
+}
