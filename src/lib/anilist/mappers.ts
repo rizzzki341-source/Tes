@@ -211,7 +211,9 @@ function mapLinks(raw: RawMediaDetail['externalLinks']): WatchLink[] {
 function mapOfficialEpisodes(raw: RawMediaDetail['streamingEpisodes']): OfficialEpisode[] {
   const out: OfficialEpisode[] = [];
   for (const episode of raw ?? []) {
-    const url = httpsOrNull(episode?.url);
+    // AniList lists these pages as `http://`; the same page is served over https, and only https is ever linked.
+    const rawUrl = episode?.url;
+    const url = httpsOrNull(typeof rawUrl === 'string' ? rawUrl.replace(/^http:\/\//i, 'https://') : rawUrl);
     if (!url) continue;
     out.push({ title: text(episode?.title)?.trim() ?? '', url, site: text(episode?.site)?.trim() ?? '' });
   }

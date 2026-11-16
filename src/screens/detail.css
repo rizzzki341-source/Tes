@@ -1,0 +1,260 @@
+/* C04 Detail. Tokens only. */
+
+.detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+/* ---------- Header ---------- */
+
+.detail-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.detail-head__banner {
+  width: 100%;
+  aspect-ratio: 16 / 5;
+  max-height: calc(var(--layout-poster-lg) * 2);
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-2);
+}
+
+.detail-head__row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.detail-head__poster {
+  flex: none;
+  width: var(--layout-poster);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+/* The poster (never the text) steps onto the banner. */
+.detail-head[data-banner] .detail-head__poster {
+  margin-top: calc(var(--space-7) * -1);
+  margin-left: var(--space-3);
+  outline: 2px solid var(--color-bg);
+}
+
+.detail-head__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.detail-head__title {
+  font-size: var(--type-xl-size);
+  line-height: var(--type-xl-line);
+  font-weight: var(--type-xl-weight);
+  overflow-wrap: anywhere;
+}
+
+.detail-head__alt {
+  overflow-wrap: anywhere;
+}
+
+.detail-head__score {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-weight: 600;
+}
+
+.detail-head__score svg {
+  width: var(--space-4);
+  height: var(--space-4);
+  color: var(--color-warning);
+  fill: currentColor;
+}
+
+/* ---------- Next episode ---------- */
+
+.detail-next {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-accent) 10%, var(--color-surface));
+}
+
+.detail-next__icon {
+  flex: none;
+  width: var(--size-icon-nav);
+  height: var(--size-icon-nav);
+  color: var(--color-accent);
+}
+
+.detail-next__text {
+  min-width: 0;
+}
+
+.detail-next__main {
+  font-weight: 600;
+}
+
+/* ---------- Actions ---------- */
+
+.detail-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: var(--space-3);
+}
+
+.detail-actions__subscribe {
+  grid-column: 1 / -1;
+}
+
+.detail-actions__list {
+  min-width: 0;
+}
+
+/* ---------- Synopsis ---------- */
+
+.detail-synopsis {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: var(--size-prose);
+}
+
+.detail-synopsis[data-clamped] {
+  max-height: calc(var(--type-base-line) * 5);
+  overflow: hidden;
+}
+
+.detail-synopsis[data-faded] {
+  -webkit-mask-image: linear-gradient(to bottom, var(--color-scrim) 55%, transparent);
+  mask-image: linear-gradient(to bottom, var(--color-scrim) 55%, transparent);
+}
+
+/* ---------- Episodes ---------- */
+
+.detail-progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: var(--size-prose);
+}
+
+.detail-progress__bar {
+  display: block;
+  width: 100%;
+  height: var(--space-2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-2);
+  color: var(--color-accent);
+  appearance: none;
+}
+
+.detail-progress__bar::-webkit-progress-bar {
+  background: var(--color-surface-2);
+}
+
+.detail-progress__bar::-webkit-progress-value {
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+}
+
+.detail-progress__bar::-moz-progress-bar {
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+}
+
+/* The line above the tracker already says how far along you are. */
+.detail-episodes .tracker__status {
+  display: none;
+}
+
+/* ---------- Official episode links ---------- */
+
+.detail-links {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-2);
+}
+
+.detail-links__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-width: 0;
+  min-height: var(--layout-tap);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+/* ---------- Facts ---------- */
+
+.detail-facts {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: var(--size-prose);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.detail-facts__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+
+.detail-facts__row + .detail-facts__row {
+  border-top: 1px solid var(--color-border);
+}
+
+.detail-facts dt {
+  color: var(--color-text-muted);
+  font-size: var(--type-sm-size);
+  line-height: var(--type-base-line);
+}
+
+@media (min-width: 900px) {
+  .detail-head__poster {
+    width: var(--layout-poster-lg);
+  }
+
+  .detail-head[data-banner] .detail-head__poster {
+    margin-top: calc(var(--space-8) * -1);
+    margin-left: var(--space-5);
+  }
+
+  .detail-head__title {
+    font-size: var(--type-display-size);
+    line-height: var(--type-display-line);
+    font-weight: var(--type-display-weight);
+  }
+
+  .detail-actions {
+    grid-template-columns: auto minmax(0, calc(var(--layout-side-nav) + var(--space-7))) auto;
+    justify-content: start;
+  }
+
+  .detail-actions__subscribe {
+    grid-column: auto;
+  }
+
+  .detail-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
