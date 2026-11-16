@@ -1,0 +1,47 @@
+feature,area,priority,original,clone,notes
+Home feed of newly updated episodes,home,must,yes,no,
+Featured banner on home,home,should,yes,no,
+Genre shortcuts on home,home,should,yes,no,
+Indonesian interface,home,must,yes,no,
+Search anime by title,search,must,yes,no,
+Sort search results,search,should,yes,no,
+Browse by genre,search,should,yes,no,
+Anime detail with synopsis score genres and episode count,detail,must,yes,no,
+Episode list per anime,detail,must,yes,no,
+Score badge on cards,detail,could,yes,no,
+View counts on cards,detail,could,yes,no,
+Share an anime,detail,could,yes,no,
+Airing schedule by day,schedule,must,yes,no,
+Aired or waiting status on schedule rows,schedule,should,yes,no,
+Subscribe to an anime,library,must,yes,no,
+Subscribed anime grid,library,must,yes,no,
+Watch history grouped by day,library,must,yes,no,
+Continue from where you stopped,library,should,yes,no,
+Notification when a subscribed anime gets a new episode,notifications,must,yes,no,
+Notification when a subscribed anime ends,notifications,should,yes,no,
+Account sign-in with cloud sync of history and subscriptions,account,could,yes,no,
+Profile stats (minutes watched joined date),account,could,yes,no,
+Stream every episode from the app's own servers,player,must,yes,skip,the original streams anime it holds no licence for (IDN Times 2026-10-24 calls it illegal); licensed video cannot be cloned so myanime plays official embeds and links to licensed platforms instead
+Player controls tied to self-hosted streams (seek quality speed auto-next),player,should,yes,skip,belongs to the unlicensed streams; official players bring their own controls
+Indonesian subtitles on every title,player,must,yes,skip,subtitles are part of the licensed streams; availability follows each official platform
+Download episodes for offline viewing,player,should,yes,skip,official sources do not permit downloading their video
+Report a broken video,player,could,yes,skip,no self-hosted video to report
+Comments and replies under episodes,community,could,yes,skip,the community and its moderation are the original's network not a feature to copy
+Likes and dislikes on episodes,community,could,yes,skip,part of the original's network; like-begging is a listed complaint
+Global chat friends clans and gifts,community,could,yes,skip,the network and its users cannot be cloned
+Levels EXP pets and the fishing mini-game,community,could,yes,skip,gamification unrelated to watching; reviewers call it bloat
+Premium subscription (no ads faster servers HD+),monetisation,could,yes,skip,nothing to sell: no ads and no self-hosted servers
+Ad-unlocked keys to open episodes,monetisation,could,yes,skip,no ads and no locked episodes
+Asian drama catalogue,catalogue,could,yes,skip,outside the anime slice being rebuilt
+Opens instantly with no login token check or blocking splash,fixes,must,no,no,fix for the 'security token / stuck on logo / forced re-login' complaints
+No ads no keys no paywall,fixes,must,no,no,fix for the ads and keys complaints
+Full catalogue with movies and older titles plus filters by year season format and status,fixes,must,no,no,fix for 'anime and movies incomplete'
+Official source finder: where each title can be watched legally,fixes,must,no,no,replaces unlicensed streaming
+Play official YouTube trailers and licensed playlists inside the app,fixes,should,no,no,official embedded player only
+Episode alerts scheduled on the device at the official air time plus a finale alert,fixes,should,no,no,fix for late notifications
+Live countdown to the next episode,fixes,should,no,no,fix for 'when does it update'
+Clear error states with retry and cached content when offline,fixes,must,no,no,fix for 'error / cannot connect'
+Backup and restore without an account and no device limit,fixes,should,no,no,fix for account resets and the one-device limit
+Mark episodes watched and track progress per title,fixes,should,no,no,replaces time-coded history for external players
+Runs as a web app as well as an Android app,fixes,could,no,no,requested in reviews
+Choice of title language (Romaji English Japanese),fixes,could,no,no,
