@@ -1,0 +1,59 @@
+/* C06 Koleksi */
+
+.library-totals {
+  color: var(--color-text-muted);
+  font-size: var(--type-sm-size);
+  line-height: var(--type-sm-line);
+  font-variant-numeric: tabular-nums;
+}
+
+.library-panel {
+  min-width: 0;
+}
+
+/* Wider cells than the plain poster grid: the button under each card needs room for its label. */
+.library-subs {
+  grid-template-columns: repeat(auto-fill, minmax(calc(var(--layout-poster) + var(--space-6)), 1fr));
+}
+
+.library-subs__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.library-progress {
+  color: var(--color-text-muted);
+  font-size: var(--type-sm-size);
+  line-height: var(--type-sm-line);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.library-history-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.library-day {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.library-day__title {
+  color: var(--color-text-muted);
+  font-size: var(--type-sm-size);
+  line-height: var(--type-sm-line);
+  font-weight: 600;
+}
+
+/* Keeps "Berhenti langganan" on one line in a two-column phone grid. */
+.library-subs__item .library-subs__stop {
+  padding-inline: var(--space-1);
+}

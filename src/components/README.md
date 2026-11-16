@@ -421,8 +421,11 @@ function useAlertsSync(): void                               // shell only
 - `lib/sources.ts`: `safeHttpsUrl(url)`, `youtubeWatchUrl(src)`, `watchPath(mediaId, src)`, `SITE_PRIORITY`.
 - `lib/anilist/queries.ts`: `resolveSort(params)`, `searchVariables(params, page)`.
 - `lib/anilist/client.ts`: `isAbortError(error)`, `ANILIST_URL`.
+- `lib/anilist/mappers.ts`: `officialEpisodes` URLs that AniList lists as `http://` are upgraded to `https://`
+  (AniList stores every Crunchyroll episode link that way); any other scheme is still dropped.
 - `lib/query.ts`: `QueryProvider`, `shouldRetry`, `retryDelay`.
-- `lib/platform.ts`: `currentHashPath()`.
+- `lib/platform.ts`: `currentHashPath()`, `shareText({ title, text })` -> `'shared' | 'copied' | 'cancelled' | 'failed'`
+  (system share sheet for plain text such as a backup; copies when there is no sheet).
 - `store/library.ts`: `toSnapshot(anime)`, `useEntry(mediaId)`, `nextUnwatched(entry)`, `subscribedIds(entries)`,
   `historyKey(mediaId, episode)`, `emptyLibrary()`, `DEFAULT_SETTINGS`, `STORAGE_KEY`, `HISTORY_LIMIT`.
   Every action accepts a full `Anime` where a `Snapshot` is expected and stores only the snapshot fields.
